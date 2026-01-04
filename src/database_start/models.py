@@ -1,6 +1,7 @@
 from enum import Enum
-from pydantic import BaseModel
-from pydantic import Field
+
+from pydantic import BaseModel, Field
+
 
 class ShipmentStatus(str, Enum):
     PLACED = "placed"
@@ -8,17 +9,20 @@ class ShipmentStatus(str, Enum):
     OUT_FOR_DELIVERY = "out_for_delivery"
     DELIVERED = "delivered"
 
+
 class BaseShipment(BaseModel):
-    content: str 
+    content: str
     weight: float = Field(le=25)
-    destination: str 
+    destination: str
+
 
 class ShipmentRead(BaseShipment):
     status: ShipmentStatus
 
+
 class ShipmentCreate(BaseShipment):
-    pass 
+    pass
+
 
 class ShipmentUpdate(BaseModel):
     status: ShipmentStatus
-    
