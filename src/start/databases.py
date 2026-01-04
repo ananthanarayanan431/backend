@@ -36,4 +36,11 @@ database = [
         user_id="1234567890",
         user_name="Anantha Narayanan",
     ),
+    Shipment(
+        id=6,
+        content="AirPods Pro 3",
+        status="pending",
+        user_id="1234567890",
+        user_name="Anantha Narayanan",
+    ),
 ]
